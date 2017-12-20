@@ -44,8 +44,8 @@ else (guess === null) {
 
 
 // timer settings
-setTimemer(threeSeconds, 1000 * 3);
-setTimemer(fifteenSeconds, 1000 * 15);
+setTimer(threeSeconds, 1000 * 3);
+var flashTimer = setTimeout(functionName, 15);
 
 
 // game timer: displayed
@@ -56,6 +56,13 @@ setTimemer(fifteenSeconds, 1000 * 15);
 
 
 // start game button
+function gameStart {
+	clearTimeout (var guessTimer);
+	setTimeout ();
+	if (triviaIndex < triviaArray.length) {continueGame()}
+	else {gameSummary()}
+
+};
 
 
 // restart game button
