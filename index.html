@@ -3,6 +3,7 @@
 <head>
 	<!--Bootstrap Link-->
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
 	<!--JQuery Linik-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -11,19 +12,42 @@
 </head>
 
 <body>
+	<!-- game title -->
 	<div class="container">
+		<h1>Trivia Game</h1>
+		<p>Instructions</p>
+	</div>
+	<br>
 
-		<!-- main Content -->
-		<div class="card" style="width: 20rem;">
-			<div class="card-body">
-				<h4 class="card-title">Trivia games</h4>
-				<p class="card-text">Instructions</p>
-
-				<!-- start game button -->
-				<a href="#" class="btn btn-primary">Start Game</a>
-			</div>
-		</div>
+	<!-- game timer -->
+	<div class="container">
 	</div>
 
+	<!-- trivia content -->
+	<div class="card" style="width: 20rem;">
+		<img class="card-img-top" src="..." alt="Card image cap">
+		<div class="card-body">
+			<h4 class="card-title"Question:</h4>
 
+		<!--The start-div will hold the start button at start of game. Hide this div after user clicks Start and after user clicks try again at end of game-->
+		<div id="start-div" class="col-md-8">
+		</div>
+
+		<!--The timer-div holds the time remaining to answer a question.-->
+		<div id="timer-div" class="col-md-8">
+			<h2>Time remaining: <span id="final-countdown">15</span></h2>
+		</div>
+
+		<!--When time remaining equals 0, display "Time's up" in the time-up div.-->
+		<div id="time-up"" class="col-md-8">
+		</div>
+
+		<!--The question-div starts out empty at start of game. When user clicks start, use jQuery to populate the div with the question and four choices.-->
+		<div id="question-div" class="col-md-8">
+		</div>
+		
+		<!--Use the correct-answer-div to display to the user whether they got the question right or wrong-->
+		<div id="correct-answer-div" class="col-md-8">
+		</div>
+		
 </body>
