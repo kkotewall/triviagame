@@ -48,9 +48,8 @@ var triviaDeck = {
   		question:"Which modern musician plays an electric viola?",
     	options:["Papa John Creach (Jefferson Airplane)","Amy Lee (Evanescence)","Frank Zappa","John Cole (The Velvet Underground)"],
     	answer:"John Cole (The Velvet Underground)"
-  		}, {
-  	} 
-  ];
+  		}
+  ]};
 
 //display trivia question
 function startGame() {
@@ -63,7 +62,7 @@ function startGame() {
     	//optionBtn style
     	optionBtn.attr("data-guess", triviaDeck.triviaArray[index].options[i]);
     	optionBtn.text(triviaDeck.triviaArray[index].options[i]);
-    	$(".optionsDisplay").append(optionBtn);
+    	$(".questionDisplay").append(optionBtn);
     	//console.log(triviaDeck.triviaArray[index].options[i]);
     };
 
@@ -80,9 +79,9 @@ function countdown() {
       //when timer runs out, stop game play and alert user
       if (timer === 0) {
         clearInterval(intervalId);
-        $("#timer-div").hide();
-        $("#question-div").hide();
-        $("#time-up").show().html("<h2>" + "Time's up!" + "</h2>").append;
+        $("#timerDisplay").hide();
+        $("#questionDisplay").hide();
+        $("#timeOver").show().html("<h2>" + "Time's up!" + "</h2>").append;
         setTimeout(advanceGame, 1000 * 3);
       }
 }
@@ -105,7 +104,7 @@ function  advanceGame() {
 startGame();
 
 //on-click event
-$(".optionsDisplay").on("click", ".option", function(choice) {
+$(".questionDisplay").on("click", ".option", function(choice) {
 
 	//grab the value of button clicked and give it the name answerCheck
 	var userOption = $(this).text();
@@ -115,10 +114,10 @@ $(".optionsDisplay").on("click", ".option", function(choice) {
 	//update counter
 	if (userOption === triviaDeck.triviaArray.[index].answer) {
 		correctScore++
-		$(".correct-answer").html("That is the correct answer!");
+		$(".correctAnswer").html("That is the correct answer!");
 		clearInterval(intervalId);
-        $("#timer-div").hide();
-        $("#question-div").hide();
+        $("#timerDisplay").hide();
+        $("#questionDisplay").hide();
         index++
         setTimeout(advanceGame, 1000 * 3);
 	}
@@ -127,12 +126,13 @@ $(".optionsDisplay").on("click", ".option", function(choice) {
 	//update counter
 	else {
 		incorrectScore++
-		$(".incorrect-answer").html("Wrong answer!");
+		$(".incorrectAnswer").html("Wrong answer!");
 		clearInterval(intervalId);
-        $("#timer-div").hide();
-        $("#question-div").hide();
+        $("#timerDisplay").hide();
+        $("#questionDisplay").hide();
         index++
         setTimeout(advanceGame, 1000 * 3);
 	}
+}
 
 } // window.onload
